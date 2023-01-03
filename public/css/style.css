@@ -1,0 +1,137 @@
+body {
+  background-image: url(../pictures/stars.jpeg);
+  width: 80%;
+  height: 100%;
+  margin-left: 10%;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: white;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.homelinks {
+  flex-direction: row;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  color: #ffe81f;
+  background-color: black;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.box1 {
+  background-color: black;
+  color: #ffe81f;
+  font-size: larger;
+  padding: 10px;
+  width: 70%;
+  max-width: 100%;
+  text-align: center;
+}
+li {
+  list-style: none;
+  margin: 0;
+  padding-bottom: 10px;
+}
+#filmDisplay {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(250px, 1fr));
+  grid-auto-rows: 0.2fr;
+  row-gap: 100px;
+}
+
+@media (max-width: 900px) {
+  #filmDisplay,
+  #wrapper #characterwrapper {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: 0.2fr;
+    position: relative;
+  }
+}
+
+a:link,
+a:visited {
+  color: #002395;
+  background: #feda4a;
+  text-decoration: none;
+}
+a:hover {
+  color: white;
+  background: black;
+}
+
+.wrapper {
+  justify-content: center;
+  text-align: center;
+  background-color: black;
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 30px;
+  grid-template-rows: auto;
+}
+
+.characterwrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-color: black;
+  color: white;
+}
+
+
+.summary {
+  margin: 10px;
+}
+
+#openingCrawl {
+  display: flex;
+  width: 50%;
+  height: 800px;
+  perspective: 400px;
+  font-family: "Pathway Gothic One", sans-serif;
+  font-size: 500%;
+  font-weight: 600;
+  line-height: 150%;
+  text-align: justify;
+  position: relative;
+  color: #feda4a;
+  font-weight: bolder;
+  bottom: 0px;
+  transform-origin: 50% 100%;
+  animation: crawl 30s linear;
+}
+
+@keyframes crawl {
+  0% {
+    top: 0;
+    transform: rotateX(20deg) translateZ(0);
+  }
+  100% {
+    top: -6000px;
+    transform: rotateX(25deg) translateZ(-2500px);
+  }
+}
+#crawlClick,
+#stopCrawl {
+  padding: auto;
+  margin: 10px;
+}
